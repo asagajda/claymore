@@ -1,0 +1,4 @@
+-epool eu1.nanopool.org:9999 
+-ewal 0x1c0f46f0dc3edaf0a078c3b78337674edbc1e696/m1/asagajda@gmail.com 
+-epsw x 
+-tt 70
