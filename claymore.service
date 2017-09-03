@@ -1,0 +1,21 @@
+[Unit]
+Description=Claymore Miner Service
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+#User=m1
+User=root
+WorkingDirectory=/home/m1
+#Environment=GPU_FORCE_64BIT_PTR=0
+#Environment=GPU_MAX_HEAP_SIZE=100
+#Environment=GPU_USE_SYNC_OBJECTS=1
+#Environment=GPU_MAX_ALLOC_PERCENT=100
+#Environment=GPU_SINGLE_ALLOC_PERCENT=100
+#Environment=PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+ExecStart=/usr/bin/screen -d -m -S claymore_screen_session /home/m1/claymore/ethdcrminer64
+ExecStop=/usr/bin/killall -w -s 2 claymore_screen_session
+KillMode=none
+
+[Install]
+WantedBy=multi-user.target
